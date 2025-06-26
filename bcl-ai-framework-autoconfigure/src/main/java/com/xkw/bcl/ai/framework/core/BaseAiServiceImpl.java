@@ -56,9 +56,7 @@ public abstract class BaseAiServiceImpl implements AiService {
      * @param messages
      */
     @Override
-    public String chat(List<AiMessage> messages) {
-        return "";
-    }
+    public abstract String chat(List<AiMessage> messages);
 
     /**
      * 流式对话
