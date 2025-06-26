@@ -1,0 +1,122 @@
+{
+  "properties": [
+    {
+      "name": "bcl.ai-framework.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否启用AI框架",
+      "defaultValue": true
+    },
+    {
+      "name": "bcl.ai-framework.default-provider",
+      "type": "java.lang.String",
+      "description": "默认AI提供商名称",
+      "defaultValue": "siliconflow"
+    },
+    {
+      "name": "bcl.ai-framework.timeout",
+      "type": "java.lang.Integer",
+      "description": "全局请求超时时间（毫秒）",
+      "defaultValue": 30000
+    },
+    {
+      "name": "bcl.ai-framework.read-timeout",
+      "type": "java.lang.Integer",
+      "description": "流式读取超时时间（毫秒）",
+      "defaultValue": 300000
+    },
+    {
+      "name": "bcl.ai-framework.providers",
+      "type": "java.util.Map<java.lang.String,com.xkw.bcl.ai.framework.config.BclAiFrameworkProperties$ProviderConfig>",
+      "description": "各AI提供商的配置映射"
+    }
+  ],
+  "groups": [
+    {
+      "name": "bcl.ai-framework",
+      "type": "com.xkw.bcl.ai.framework.config.BclAiFrameworkProperties",
+      "description": "BCL AI Framework 配置"
+    },
+    {
+      "name": "bcl.ai-framework.providers",
+      "type": "com.xkw.bcl.ai.framework.config.BclAiFrameworkProperties$ProviderConfig",
+      "description": "AI提供商配置，支持配置多个提供商如 siliconflow、openai、baidu、alibaba 等"
+    }
+  ],
+  "hints": [
+    {
+      "name": "bcl.ai-framework.default-provider",
+      "values": [
+        {
+          "value": "siliconflow",
+          "description": "SiliconFlow 硅基流动 - 支持多种开源大模型"
+        },
+        {
+          "value": "openai",
+          "description": "OpenAI GPT系列模型"
+        },
+        {
+          "value": "baidu",
+          "description": "百度文心一言"
+        },
+        {
+          "value": "alibaba",
+          "description": "阿里通义千问"
+        },
+        {
+          "value": "tencent",
+          "description": "腾讯混元"
+        }
+      ]
+    },
+    {
+      "name": "bcl.ai-framework.providers.siliconflow.default-model",
+      "values": [
+        {
+          "value": "deepseek-ai/DeepSeek-V2.5",
+          "description": "DeepSeek V2.5 - 通用对话模型"
+        },
+        {
+          "value": "deepseek-ai/DeepSeek-Coder-V2-Instruct",
+          "description": "DeepSeek Coder - 专业代码生成模型"
+        },
+        {
+          "value": "Qwen/Qwen2.5-72B-Instruct",
+          "description": "Qwen2.5 72B - 阿里通义千问大模型"
+        },
+        {
+          "value": "Qwen/Qwen2.5-7B-Instruct",
+          "description": "Qwen2.5 7B - 轻量级通义千问模型"
+        },
+        {
+          "value": "THUDM/glm-4-9b-chat",
+          "description": "GLM-4 9B - 智谱清言对话模型"
+        },
+        {
+          "value": "internlm/internlm2_5-20b-chat",
+          "description": "InternLM2.5 20B - 书生大模型"
+        },
+        {
+          "value": "Qwen/Qwen2-VL-7B-Instruct",
+          "description": "Qwen2-VL - 视觉理解多模态模型"
+        }
+      ]
+    },
+    {
+      "name": "bcl.ai-framework.providers.openai.default-model",
+      "values": [
+        {
+          "value": "gpt-3.5-turbo",
+          "description": "GPT-3.5 Turbo - 快速响应模型"
+        },
+        {
+          "value": "gpt-4",
+          "description": "GPT-4 - 高性能模型"
+        },
+        {
+          "value": "gpt-4-turbo",
+          "description": "GPT-4 Turbo - 最新优化模型"
+        }
+      ]
+    }
+  ]
+} 
