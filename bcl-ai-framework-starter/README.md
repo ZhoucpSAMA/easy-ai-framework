@@ -30,7 +30,7 @@ BCL AI Framework Starter 是一个Spring Boot自动配置组件，用于快速�
 <dependency>
     <groupId>com.xkw.bcl</groupId>
     <artifactId>bcl-ai-framework-starter</artifactId>
-    <version>2.0.0-SNAPSHOT</version>
+    <version>1.0.0.RELEASE</version>
 </dependency>
 ```
 
