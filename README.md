@@ -1,11 +1,11 @@
-# BCL AI Framework Starter
+# Easy AI Framework Starter
 
 <div align="center">
 
 [![Java Version](https://img.shields.io/badge/Java-8+-orange.svg)](https://www.oracle.com/java/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.3.5-brightgreen.svg)](https://spring.io/projects/spring-boot)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7.18-brightgreen.svg)](https://spring.io/projects/spring-boot)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-2.0.0--SNAPSHOT-red.svg)](https://github.com/your-repo/easy-ai-framework)
+[![Version](https://img.shields.io/badge/Version-1.0.0--RELEASE-red.svg)](https://github.com/your-repo/easy-ai-framework)
 
 **🚀 企业级AI模型统一接入框架**
 
