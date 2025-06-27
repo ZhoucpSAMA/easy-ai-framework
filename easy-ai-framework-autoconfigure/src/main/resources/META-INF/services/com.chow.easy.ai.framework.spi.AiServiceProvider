@@ -1,0 +1,11 @@
+# SiliconFlow AI服务提供商
+com.chow.easy.ai.framework.provider.siliconflow.SiliconFlowServiceProvider
+
+# OpenAI 服务提供商
+com.chow.easy.ai.framework.provider.openai.OpenAiServiceProvider
+
+# DeepSeek 服务提供商
+com.chow.easy.ai.framework.provider.deepseek.DeepSeekServiceProvider
+
+# Doubao 服务提供商
+com.chow.easy.ai.framework.provider.doubao.DoubaoServiceProvider

@@ -263,7 +263,7 @@ bcl:
 ```yaml
 logging:
   level:
-    com.xkw.bcl.ai.framework.provider.deepseek: DEBUG
+    com.chow.easy.ai.framework.provider.deepseek: DEBUG
 ```
 
 ### 2. 推理过程查看

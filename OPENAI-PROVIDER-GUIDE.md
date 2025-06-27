@@ -251,7 +251,7 @@ bcl:
 ```yaml
 logging:
   level:
-    com.xkw.bcl.ai.framework.provider.openai: DEBUG
+    com.chow.easy.ai.framework.provider.openai: DEBUG
 ```
 
 ### 2. 查看请求详情

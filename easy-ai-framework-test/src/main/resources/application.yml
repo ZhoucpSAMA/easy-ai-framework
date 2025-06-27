@@ -1,0 +1,88 @@
+server:
+  port: 8080
+
+# BCL AI Framework 测试配置
+# 演示多提供商配置
+
+bcl:
+  ai-framework:
+    # 是否启用AI框架
+    enabled: true
+    
+    # 可以切换不同的默认提供商测试
+    default-provider: siliconflow  # 可以设置为 openai、deepseek、doubao 或 siliconflow
+    
+    # 全局超时配置
+    timeout: 30000
+    read-timeout: 60000
+    
+    # 多提供商配置
+    providers:
+      # SiliconFlow配置
+      siliconflow:
+        api-key: sk-fsoqzvhxpuxaeboqhmodeslldclqcmvyzfsslngeseqveewn
+        api-url: https://api.siliconflow.cn/v1
+        default-model: Qwen/Qwen2.5-7B-Instruct
+        parameters:
+          temperature: 0.7
+          max_tokens: 4096
+          top_p: 0.9
+      
+      # OpenAI配置
+      #      openai:
+      #        api-key: sk-your-openai-api-key-here
+      #        # api-url: https://api.openai.com/v1  # 可选，默认会使用此URL
+      #        default-model: gpt-3.5-turbo
+      #        parameters:
+      #          temperature: 0.7
+      #          max_tokens: 2000
+      #          top_p: 1.0
+      #          frequency_penalty: 0.0
+      #          presence_penalty: 0.0
+      
+      # DeepSeek配置
+      #      deepseek:
+      #        api-key: sk-your-deepseek-api-key-here
+      #        # api-url: https://api.deepseek.com  # 可选，默认会使用此URL
+      #        default-model: deepseek-chat
+      #        parameters:
+      #          temperature: 1.0
+      #          max_tokens: 4096
+      #          top_p: 1.0
+      #          frequency_penalty: 0.0
+      #          presence_penalty: 0.0
+      #          # response_format: { "type": "json_object" }  # 可选，JSON输出格式
+      
+      # Doubao（豆包）配置
+      #      doubao:
+      #        api-key: your-doubao-api-key-here
+      #        # api-url: https://ark.cn-beijing.volces.com/api/v3  # 可选，默认会使用此URL
+      #        default-model: doubao-pro-32k  # 或使用接入点ID，如 ep-xxxxxxxx-xxxxx
+      #        parameters:
+      #          temperature: 0.7
+      #          max_tokens: 4096
+      #          top_p: 1.0
+      #          frequency_penalty: 0.0
+      #          presence_penalty: 0.0
+      #          # endpoint_id: ep-xxxxxxxx-xxxxx  # 如果使用自定义接入点ID
+      
+      # 百度文心一言配置（示例，暂未实现）
+#      baidu:
+#        api-key: your-baidu-key-here
+#        api-url: https://aip.baidubce.com/rpc/2.0/ai_custom/v1
+#        default-model: ernie-bot
+#        parameters:
+#          temperature: 0.8
+#          top_p: 0.8
+
+# Spring Boot 应用配置
+spring:
+  application:
+    name: easy-ai-framework-test
+# 日志配置
+logging:
+  level:
+    com.xkw.bcl.ai.framework: DEBUG
+    org.springframework.boot.autoconfigure: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

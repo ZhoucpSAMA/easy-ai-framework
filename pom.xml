@@ -5,24 +5,24 @@
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>com.xkw.bcl</groupId>
-    <artifactId>bcl-ai-framework</artifactId>
-    <version>2.0.0-SNAPSHOT</version>
+    <artifactId>easy-ai-framework</artifactId>
+    <version>1.0.0.RELEASE</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>bcl-ai-framework-autoconfigure</module>
-        <module>bcl-ai-framework-starter</module>
-        <module>bcl-ai-framework-test</module>
+        <module>easy-ai-framework-autoconfigure</module>
+        <module>easy-ai-framework-starter</module>
+        <module>easy-ai-framework-test</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.5.RELEASE</version>
+        <version>2.7.18</version>
     </parent>
 
     <properties>
-        <bcl-ai-framework.version>2.0.0-SNAPSHOT</bcl-ai-framework.version>
+        <easy-ai-framework.version>1.0.0.RELEASE</easy-ai-framework.version>
         <java.version>8</java.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -32,13 +32,13 @@
         <dependencies>
             <dependency>
                 <groupId>com.xkw.bcl</groupId>
-                <artifactId>bcl-ai-framework-autoconfigure</artifactId>
-                <version>${bcl-ai-framework.version}</version>
+                <artifactId>easy-ai-framework-autoconfigure</artifactId>
+                <version>${easy-ai-framework.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.xkw.bcl</groupId>
-                <artifactId>bcl-ai-framework-starter</artifactId>
-                <version>${bcl-ai-framework.version}</version>
+                <artifactId>easy-ai-framework-starter</artifactId>
+                <version>${easy-ai-framework.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

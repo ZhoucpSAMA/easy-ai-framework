@@ -19,38 +19,38 @@ SPI (Service Provider Interface) 是 Java 提供的一种服务发现机制，�
 ```java
 package com.example.provider;
 
-import com.xkw.bcl.ai.framework.spi.AiServiceProvider;
-import com.xkw.bcl.ai.framework.config.BclAiFrameworkProperties;
-import com.xkw.bcl.ai.framework.core.AiService;
+import com.chow.easy.ai.framework.spi.AiServiceProvider;
+import com.chow.easy.ai.framework.config.BclAiFrameworkProperties;
+import com.chow.easy.ai.framework.core.AiService;
 
 public class CustomAiServiceProvider implements AiServiceProvider {
-    
+
     @Override
     public String getProviderName() {
         return "custom-ai"; // 提供商唯一名称
     }
-    
+
     @Override
     public boolean supports(String providerName) {
         return "custom-ai".equalsIgnoreCase(providerName);
     }
-    
+
     @Override
-    public AiService createAiService(BclAiFrameworkProperties.ProviderConfig config, 
-                                   int timeout, int readTimeout) {
+    public AiService createAiService(BclAiFrameworkProperties.ProviderConfig config,
+                                     int timeout, int readTimeout) {
         return new CustomAiService(config, timeout, readTimeout);
     }
-    
+
     @Override
     public int getPriority() {
         return 80; // 优先级，数值越小优先级越高
     }
-    
+
     @Override
     public String getDescription() {
         return "Custom AI Provider - 自定义AI服务提供商";
     }
-    
+
     @Override
     public List<String> getSupportedModels() {
         return Arrays.asList("custom-model-v1", "custom-model-v2");
@@ -63,28 +63,28 @@ public class CustomAiServiceProvider implements AiServiceProvider {
 ```java
 package com.example.provider;
 
-import com.xkw.bcl.ai.framework.core.BaseAiServiceImpl;
-import com.xkw.bcl.ai.framework.core.AiMessage;
-import com.xkw.bcl.ai.framework.config.BclAiFrameworkProperties;
+import com.chow.easy.ai.framework.core.BaseAiServiceImpl;
+import com.chow.easy.ai.framework.core.AiMessage;
+import com.chow.easy.ai.framework.config.BclAiFrameworkProperties;
 
 public class CustomAiService extends BaseAiServiceImpl {
-    
-    public CustomAiService(BclAiFrameworkProperties.ProviderConfig config, 
-                          int timeout, int readTimeout) {
+
+    public CustomAiService(BclAiFrameworkProperties.ProviderConfig config,
+                           int timeout, int readTimeout) {
         super(config, timeout, readTimeout);
     }
-    
+
     @Override
     public String getProviderName() {
         return "custom-ai";
     }
-    
+
     @Override
     public boolean isAvailable() {
         // 实现可用性检查逻辑
         return true;
     }
-    
+
     @Override
     protected Map<String, Object> buildRequestBody(List<AiMessage> messages, boolean stream) {
         // 构建API请求体
@@ -93,21 +93,21 @@ public class CustomAiService extends BaseAiServiceImpl {
         body.put("stream", stream);
         return body;
     }
-    
+
     @Override
     protected String parseResponse(String responseBody) {
         // 解析API响应
         // 实现具体的解析逻辑
         return responseBody;
     }
-    
+
     @Override
     protected void parseStreamResponse(String line, Consumer<String> callback) {
         // 解析流式响应
         // 实现具体的流式解析逻辑
         callback.accept(line);
     }
-    
+
     @Override
     protected String getApiEndpoint() {
         return "/v1/chat/completions"; // API端点
@@ -119,7 +119,7 @@ public class CustomAiService extends BaseAiServiceImpl {
 
 在你的 JAR 包中创建文件：
 ```
-src/main/resources/META-INF/services/com.xkw.bcl.ai.framework.spi.AiServiceProvider
+src/main/resources/META-INF/services/com.chow.easy.ai.framework.spi.AiServiceProvider
 ```
 
 文件内容：
@@ -141,7 +141,7 @@ mvn clean package
 
 ### SiliconFlow 提供商
 - **名称**: `siliconflow`
-- **类**: `com.xkw.bcl.ai.framework.provider.siliconflow.SiliconFlowServiceProvider`
+- **类**: `com.chow.easy.ai.framework.provider.siliconflow.SiliconFlowServiceProvider`
 - **优先级**: 50
 - **支持模型**: DeepSeek-V2.5, Qwen2.5, GLM-4 等多种开源模型
 
@@ -269,6 +269,6 @@ public class MyAiService extends BaseAiServiceImpl implements AutoCloseable {
 
 - [Java SPI 官方文档](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
 - [BCL AI Framework API 文档](./README.md)
-- [SiliconFlow 提供商示例](./bcl-ai-framework-autoconfigure/src/main/java/com/xkw/bcl/ai/framework/provider/siliconflow/)
+- [SiliconFlow 提供商示例](./easy-ai-framework-autoconfigure/src/main/java/com/chow/easy/ai/framework/provider/siliconflow/)
 
 通过 SPI 机制，BCL AI Framework 真正实现了"开放式架构"，任何人都可以为框架贡献新的 AI 提供商实现！🚀 

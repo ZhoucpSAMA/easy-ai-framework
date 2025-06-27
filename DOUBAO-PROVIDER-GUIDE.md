@@ -287,7 +287,7 @@ bcl:
 ```yaml
 logging:
   level:
-    com.xkw.bcl.ai.framework.provider.doubao: DEBUG
+    com.chow.easy.ai.framework.provider.doubao: DEBUG
 ```
 
 ### 2. 性能监控

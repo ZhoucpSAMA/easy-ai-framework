@@ -5,7 +5,7 @@
 [![Java Version](https://img.shields.io/badge/Java-8+-orange.svg)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.3.5-brightgreen.svg)](https://spring.io/projects/spring-boot)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-2.0.0--SNAPSHOT-red.svg)](https://github.com/your-repo/bcl-ai-framework)
+[![Version](https://img.shields.io/badge/Version-2.0.0--SNAPSHOT-red.svg)](https://github.com/your-repo/easy-ai-framework)
 
 **🚀 企业级AI模型统一接入框架**
 
@@ -52,10 +52,11 @@
 在项目的 `pom.xml` 中添加依赖：
 
 ```xml
+
 <dependency>
-    <groupId>com.xkw.bcl</groupId>
-    <artifactId>bcl-ai-framework-starter</artifactId>
-    <version>2.0.0-SNAPSHOT</version>
+    <groupId>com.chow.easycom.chow.easy</groupId>
+    <artifactId>easy-ai-framework-starter</artifactId>
+    <version>1.0.0.RELEASE</version>
 </dependency>
 ```
 
@@ -366,7 +367,7 @@ public class CustomAiService extends BaseAiServiceImpl {
 
 #### 3️⃣ 注册SPI服务
 
-在 `src/main/resources/META-INF/services/com.xkw.bcl.ai.framework.spi.AiServiceProvider` 文件中添加：
+在 `src/main/resources/META-INF/services/com.chow.easy.ai.framework.spi.AiServiceProvider` 文件中添加：
 
 ```
 com.example.provider.CustomAiServiceProvider
@@ -428,7 +429,7 @@ bcl:
 # 启用详细日志
 logging:
   level:
-    com.xkw.bcl.ai.framework: DEBUG
+    com.chow.easy.ai.framework: DEBUG
 ```
 
 ## 🚨 常见问题
@@ -496,6 +497,6 @@ logging:
 
 **🌟 如果这个项目对您有帮助，请给我们一个Star！ 🌟**
 
-[⬆ 回到顶部](#bcl-ai-framework-starter)
+[⬆ 回到顶部](#easy-ai-framework-starter)
 
 </div> 
