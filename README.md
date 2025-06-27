@@ -54,7 +54,7 @@
 ```xml
 
 <dependency>
-    <groupId>com.chow.easycom.chow.easy</groupId>
+    <groupId>com.chow.easy</groupId>
     <artifactId>easy-ai-framework-starter</artifactId>
     <version>1.0.0.RELEASE</version>
 </dependency>

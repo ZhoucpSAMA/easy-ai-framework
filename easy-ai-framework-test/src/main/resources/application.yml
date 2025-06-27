@@ -82,7 +82,7 @@ spring:
 # 日志配置
 logging:
   level:
-    com.xkw.bcl.ai.framework: DEBUG
+    com.chow.easy.ai.framework: DEBUG
     org.springframework.boot.autoconfigure: INFO
   pattern:
     console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
