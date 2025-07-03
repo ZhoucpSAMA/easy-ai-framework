@@ -3,6 +3,8 @@ package com.chow.easy.ai.framework.spi;
 import com.chow.easy.ai.framework.config.BclAiFrameworkProperties;
 import com.chow.easy.ai.framework.core.AiService;
 
+import java.util.List;
+
 /**
  * AI服务提供商SPI接口
  * 第三方可以通过实现此接口来扩展新的AI提供商
@@ -62,7 +64,7 @@ public interface AiServiceProvider {
      *
      * @return 支持的模型名称列表，null表示不限制
      */
-    default java.util.List<String> getSupportedModels() {
+    default List<String> getSupportedModels() {
         return null;
     }
 } 
