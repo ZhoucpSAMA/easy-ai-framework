@@ -1,6 +1,6 @@
 package com.chow.easy.ai.framework.provider.openai;
 
-import com.chow.easy.ai.framework.config.BclAiFrameworkProperties;
+import com.chow.easy.ai.framework.config.EasyAiFrameworkProperties;
 import com.chow.easy.ai.framework.core.AiService;
 import com.chow.easy.ai.framework.spi.AiServiceProvider;
 
@@ -53,7 +53,7 @@ public class OpenAiServiceProvider implements AiServiceProvider {
     }
 
     @Override
-    public AiService createAiService(BclAiFrameworkProperties.ProviderConfig config, int timeout, int readTimeout) {
+    public AiService createAiService(EasyAiFrameworkProperties.ProviderConfig config, int timeout, int readTimeout) {
         return new OpenAiService(config, timeout, readTimeout);
     }
 

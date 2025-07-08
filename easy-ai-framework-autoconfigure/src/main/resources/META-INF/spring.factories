@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-   com.chow.easy.ai.framework.config.BclAiFrameworkAutoConfiguration
+   com.chow.easy.ai.framework.config.EasyAiFrameworkAutoConfiguration

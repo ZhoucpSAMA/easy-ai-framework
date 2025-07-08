@@ -15,7 +15,7 @@ import java.util.Map;
  */
 @Data
 @ConfigurationProperties(prefix = "bcl.ai-framework")
-public class BclAiFrameworkProperties {
+public class EasyAiFrameworkProperties {
 
     /**
      * 是否启用AI功能

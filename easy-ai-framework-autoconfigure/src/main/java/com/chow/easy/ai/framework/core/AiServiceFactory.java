@@ -1,6 +1,6 @@
 package com.chow.easy.ai.framework.core;
 
-import com.chow.easy.ai.framework.config.BclAiFrameworkProperties;
+import com.chow.easy.ai.framework.config.EasyAiFrameworkProperties;
 import com.chow.easy.ai.framework.provider.deepseek.DeepSeekService;
 import com.chow.easy.ai.framework.provider.doubao.DoubaoService;
 import com.chow.easy.ai.framework.provider.openai.OpenAiService;
@@ -25,10 +25,10 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @Component
 public class AiServiceFactory {
-    private final BclAiFrameworkProperties aiProperties;
+    private final EasyAiFrameworkProperties aiProperties;
     private final Map<String, AiService> serviceCache = new ConcurrentHashMap<>();
 
-    public AiServiceFactory(BclAiFrameworkProperties aiProperties) {
+    public AiServiceFactory(EasyAiFrameworkProperties aiProperties) {
         this.aiProperties = aiProperties;
 
         // 初始化时加载SPI提供商
@@ -58,7 +58,7 @@ public class AiServiceFactory {
      * 检查指定提供商是否已配置
      */
     public boolean isProviderConfigured(String providerName) {
-        BclAiFrameworkProperties.ProviderConfig config = aiProperties.getProviders().get(providerName);
+        EasyAiFrameworkProperties.ProviderConfig config = aiProperties.getProviders().get(providerName);
         return config != null &&
                 config.getApiKey() != null &&
                 !config.getApiKey().trim().isEmpty();
@@ -83,7 +83,7 @@ public class AiServiceFactory {
      * 优先使用SPI机制，如果SPI中没有找到则回退到硬编码方式
      */
     private AiService createService(String providerName) {
-        BclAiFrameworkProperties.ProviderConfig config = aiProperties.getProviders().get(providerName);
+        EasyAiFrameworkProperties.ProviderConfig config = aiProperties.getProviders().get(providerName);
         if (config == null) {
             throw new IllegalArgumentException("Provider not configured: " + providerName);
         }

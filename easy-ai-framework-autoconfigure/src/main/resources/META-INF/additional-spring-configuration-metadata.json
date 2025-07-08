@@ -33,12 +33,12 @@
   "groups": [
     {
       "name": "bcl.ai-framework",
-      "type": "com.chow.easy.ai.framework.config.BclAiFrameworkProperties",
+      "type": "com.chow.easy.ai.framework.config.EasyAiFrameworkProperties",
       "description": "BCL AI Framework 配置"
     },
     {
       "name": "bcl.ai-framework.providers",
-      "type": "com.chow.easy.ai.framework.config.BclAiFrameworkProperties$ProviderConfig",
+      "type": "com.chow.easy.ai.framework.config.EasyAiFrameworkProperties$ProviderConfig",
       "description": "AI提供商配置，支持配置多个提供商如 siliconflow、openai、baidu、alibaba 等"
     }
   ],

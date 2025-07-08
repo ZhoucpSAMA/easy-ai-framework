@@ -1,6 +1,6 @@
 package com.chow.easy.ai.framework.provider.siliconflow;
 
-import com.chow.easy.ai.framework.config.BclAiFrameworkProperties;
+import com.chow.easy.ai.framework.config.EasyAiFrameworkProperties;
 import com.chow.easy.ai.framework.core.AiMessage;
 import com.chow.easy.ai.framework.core.BaseAiServiceImpl;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -26,7 +26,7 @@ public class SiliconFlowService extends BaseAiServiceImpl {
     private static final String DEFAULT_API_URL = "https://api.siliconflow.cn";
     private static final String CHAT_ENDPOINT = "/chat/completions";
 
-    public SiliconFlowService(BclAiFrameworkProperties.ProviderConfig config, int timeout, int readTimeout) {
+    public SiliconFlowService(EasyAiFrameworkProperties.ProviderConfig config, int timeout, int readTimeout) {
         super(config, timeout, readTimeout);
 
         // 如果没有配置API URL，使用默认值

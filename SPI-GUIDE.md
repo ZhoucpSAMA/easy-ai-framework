@@ -20,7 +20,7 @@ SPI (Service Provider Interface) 是 Java 提供的一种服务发现机制，�
 package com.example.provider;
 
 import com.chow.easy.ai.framework.spi.AiServiceProvider;
-import com.chow.easy.ai.framework.config.BclAiFrameworkProperties;
+import com.chow.easy.ai.framework.config.EasyAiFrameworkProperties;
 import com.chow.easy.ai.framework.core.AiService;
 
 public class CustomAiServiceProvider implements AiServiceProvider {
@@ -65,7 +65,7 @@ package com.example.provider;
 
 import com.chow.easy.ai.framework.core.BaseAiServiceImpl;
 import com.chow.easy.ai.framework.core.AiMessage;
-import com.chow.easy.ai.framework.config.BclAiFrameworkProperties;
+import com.chow.easy.ai.framework.config.EasyAiFrameworkProperties;
 
 public class CustomAiService extends BaseAiServiceImpl {
 

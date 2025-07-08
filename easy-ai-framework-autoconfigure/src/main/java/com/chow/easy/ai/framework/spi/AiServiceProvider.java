@@ -1,6 +1,6 @@
 package com.chow.easy.ai.framework.spi;
 
-import com.chow.easy.ai.framework.config.BclAiFrameworkProperties;
+import com.chow.easy.ai.framework.config.EasyAiFrameworkProperties;
 import com.chow.easy.ai.framework.core.AiService;
 
 import java.util.List;
@@ -38,7 +38,7 @@ public interface AiServiceProvider {
      * @param readTimeout 读取超时时间（毫秒）
      * @return AI服务实例
      */
-    AiService createAiService(BclAiFrameworkProperties.ProviderConfig config, int timeout, int readTimeout);
+    AiService createAiService(EasyAiFrameworkProperties.ProviderConfig config, int timeout, int readTimeout);
 
     /**
      * 获取提供商优先级

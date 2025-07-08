@@ -1,6 +1,6 @@
 package com.chow.easy.ai.framework.provider.openai;
 
-import com.chow.easy.ai.framework.config.BclAiFrameworkProperties;
+import com.chow.easy.ai.framework.config.EasyAiFrameworkProperties;
 import com.chow.easy.ai.framework.core.AiMessage;
 import com.chow.easy.ai.framework.core.BaseAiServiceImpl;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -26,7 +26,7 @@ public class OpenAiService extends BaseAiServiceImpl {
     private static final String DEFAULT_API_URL = "https://api.openai.com/v1";
     private static final String CHAT_ENDPOINT = "/chat/completions";
 
-    public OpenAiService(BclAiFrameworkProperties.ProviderConfig config, int timeout, int readTimeout) {
+    public OpenAiService(EasyAiFrameworkProperties.ProviderConfig config, int timeout, int readTimeout) {
         super(config, timeout, readTimeout);
 
         // 如果没有配置API URL，使用默认值

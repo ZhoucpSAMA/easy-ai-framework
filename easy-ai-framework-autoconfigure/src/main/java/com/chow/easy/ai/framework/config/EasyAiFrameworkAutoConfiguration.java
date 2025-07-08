@@ -18,20 +18,20 @@ import org.springframework.context.annotation.Configuration;
  */
 @Slf4j
 @Configuration
-@EnableConfigurationProperties(BclAiFrameworkProperties.class)
+@EnableConfigurationProperties(EasyAiFrameworkProperties.class)
 @ConditionalOnProperty(prefix = "bcl.ai-framework", name = "enabled", havingValue = "true", matchIfMissing = true)
-public class BclAiFrameworkAutoConfiguration {
+public class EasyAiFrameworkAutoConfiguration {
 
     /**
      * 创建AI框架服务Bean
      *
-     * @param bclAiFrameworkProperties 配置属性
+     * @param easyAiFrameworkProperties 配置属性
      * @return AI框架服务实例
      */
     @Bean
     @ConditionalOnMissingBean
-    public AiServiceFactory aiServiceFactory(BclAiFrameworkProperties bclAiFrameworkProperties) {
-        return new AiServiceFactory(bclAiFrameworkProperties);
+    public AiServiceFactory aiServiceFactory(EasyAiFrameworkProperties easyAiFrameworkProperties) {
+        return new AiServiceFactory(easyAiFrameworkProperties);
     }
 
     @Bean

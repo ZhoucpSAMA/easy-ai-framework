@@ -1,6 +1,6 @@
 package com.chow.easy.ai.framework.core;
 
-import com.chow.easy.ai.framework.config.BclAiFrameworkProperties;
+import com.chow.easy.ai.framework.config.EasyAiFrameworkProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
@@ -23,11 +23,11 @@ import java.util.function.Consumer;
 @Slf4j
 public abstract class BaseAiServiceImpl implements AiService {
 
-    protected final BclAiFrameworkProperties.ProviderConfig config;
+    protected final EasyAiFrameworkProperties.ProviderConfig config;
     protected final ObjectMapper objectMapper;
     protected final OkHttpClient httpClient;
 
-    protected BaseAiServiceImpl(BclAiFrameworkProperties.ProviderConfig config, int timeout, int readTimeout) {
+    protected BaseAiServiceImpl(EasyAiFrameworkProperties.ProviderConfig config, int timeout, int readTimeout) {
         this.config = config;
         this.objectMapper = new ObjectMapper();
         this.httpClient = new OkHttpClient.Builder()
