@@ -10,7 +10,7 @@
       "name": "bcl.ai-framework.default-provider",
       "type": "java.lang.String",
       "description": "默认AI提供商名称",
-      "defaultValue": "siliconflow"
+      "defaultValue": "openai"
     },
     {
       "name": "bcl.ai-framework.timeout",
@@ -26,8 +26,28 @@
     },
     {
       "name": "bcl.ai-framework.providers",
-      "type": "java.util.Map<java.lang.String,com.chow.easy.ai.framework.config.BclAiFrameworkProperties$ProviderConfig>",
+      "type": "java.util.Map<java.lang.String,com.chow.easy.ai.framework.config.EasyAiFrameworkProperties$ProviderConfig>",
       "description": "各AI提供商的配置映射"
+    },
+    {
+      "name": "bcl.ai-framework.providers.*.api-key",
+      "type": "java.lang.String",
+      "description": "AI提供商的API密钥"
+    },
+    {
+      "name": "bcl.ai-framework.providers.*.api-url",
+      "type": "java.lang.String",
+      "description": "AI提供商的API接口地址"
+    },
+    {
+      "name": "bcl.ai-framework.providers.*.default-model",
+      "type": "java.lang.String",
+      "description": "AI提供商的默认模型名称"
+    },
+    {
+      "name": "bcl.ai-framework.providers.*.parameters",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>",
+      "description": "AI提供商的自定义参数配置"
     }
   ],
   "groups": [
@@ -39,7 +59,7 @@
     {
       "name": "bcl.ai-framework.providers",
       "type": "com.chow.easy.ai.framework.config.EasyAiFrameworkProperties$ProviderConfig",
-      "description": "AI提供商配置，支持配置多个提供商如 siliconflow、openai、baidu、alibaba 等"
+      "description": "AI提供商配置，支持配置多个提供商如 siliconflow、openai、deepseek、doubao 等"
     }
   ],
   "hints": [
@@ -47,24 +67,41 @@
       "name": "bcl.ai-framework.default-provider",
       "values": [
         {
-          "value": "siliconflow",
-          "description": "SiliconFlow 硅基流动 - 支持多种开源大模型"
-        },
-        {
           "value": "openai",
           "description": "OpenAI GPT系列模型"
         },
         {
-          "value": "baidu",
-          "description": "百度文心一言"
+          "value": "siliconflow",
+          "description": "SiliconFlow 硅基流动 - 支持多种开源大模型"
         },
         {
-          "value": "alibaba",
-          "description": "阿里通义千问"
+          "value": "deepseek",
+          "description": "DeepSeek 深度求索 - 专业AI模型"
         },
         {
-          "value": "tencent",
-          "description": "腾讯混元"
+          "value": "doubao",
+          "description": "豆包 - 字节跳动AI模型"
+        }
+      ]
+    },
+    {
+      "name": "bcl.ai-framework.providers.openai.default-model",
+      "values": [
+        {
+          "value": "gpt-3.5-turbo",
+          "description": "GPT-3.5 Turbo - 快速响应模型"
+        },
+        {
+          "value": "gpt-4",
+          "description": "GPT-4 - 高性能模型"
+        },
+        {
+          "value": "gpt-4-turbo",
+          "description": "GPT-4 Turbo - 最新优化模型"
+        },
+        {
+          "value": "gpt-4o",
+          "description": "GPT-4o - 多模态模型"
         }
       ]
     },
@@ -102,19 +139,24 @@
       ]
     },
     {
-      "name": "bcl.ai-framework.providers.openai.default-model",
+      "name": "bcl.ai-framework.providers.deepseek.default-model",
       "values": [
         {
-          "value": "gpt-3.5-turbo",
-          "description": "GPT-3.5 Turbo - 快速响应模型"
+          "value": "deepseek-chat",
+          "description": "DeepSeek Chat - 通用对话模型"
         },
         {
-          "value": "gpt-4",
-          "description": "GPT-4 - 高性能模型"
-        },
+          "value": "deepseek-coder",
+          "description": "DeepSeek Coder - 专业代码生成模型"
+        }
+      ]
+    },
+    {
+      "name": "bcl.ai-framework.providers.doubao.default-model",
+      "values": [
         {
-          "value": "gpt-4-turbo",
-          "description": "GPT-4 Turbo - 最新优化模型"
+          "value": "ep-20241230105018-z8dbh",
+          "description": "豆包默认模型"
         }
       ]
     }
